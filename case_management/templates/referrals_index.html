@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block main %}
+
+<div class="table">
+    <h2>referral list</h2>
+<table id="table-referrals"> 
+    <thead>  
+    <tr>  
+        <th>Patient Id</th>
+        <th>Patient Name</th>
+        <th>Referrer</th>  
+        <th>Referral Date</th>  
+        <th></th>                
+    </tr>  
+    </thead>  
+    <tbody>  
+    {% for referral in referrals %}
+    <tr >
+        <td>{{ referral.person.id }}</td>
+        <td>{{ referral.person }}</td> 
+        <td>{{ referral.referrer}}</td>
+        <td>{{ referral.referralDate }}</td>      
+        <td>  
+            <a href="/edit_referral/{{ referral.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+            <a href="/delete_referral/{{ referral.id }}">Delete</a>  
+        </td>           
+    </tr>    
+    {% endfor %}      
+    </tbody>  
+</table>  
+<br>
+<center><a href="{% url 'create_referral' %}" class="btn btn-primary">Add New Data</a></center> 
+</div>
+
+<!-- <aside>
+    <div>
+        <h2>Cardiac Services</h2>
+        <img src="../static/images/Cardiac-Services.jpg" alt="Cardiac Services">
+        <p>A private, comprehensive and high quality service was set up in Christchurch in 2003 to meet the growing demand for high quality cardiac services.</p>
+    </div>
+    <div>
+        <h2>Surgical Services</h2>
+        <img src="../static/images/surgical-services.jpg" alt="surgical-services">
+        <p>Leading the way in providing care and technology, New Zealand Health offers a large variety of surgical services.</p>
+    </div>
+</aside> -->
+{% endblock %}

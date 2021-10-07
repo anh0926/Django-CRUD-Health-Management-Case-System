@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>{% block title %}NZ Health Case Management{% endblock %}</title>
+      {% load static %}  
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="{% static 'css/style.css' %}"type="text/css" media="all"/>
+   </head>
+   <body>
+      <header>
+         <div>
+            {% block logo%}
+            <img src="../static/images/logo.png"  alt="Fender logo">
+            {% endblock %}
+            <p>New Zealand Health</p>
+         </div>
+         <h1> Health Management Case System</h1>
+         <div class="login">
+            {% if user.is_authenticated %}
+            Hi {{ user.username }}!
+            <p></p>
+            <a id="login" href="{% url 'logout' %}">log out</a></p>
+            {% else %}
+            <p>You are not logged in</p>
+            <a id="login" href="{% url 'login' %}">log in</a>
+            {% endif %}       
+         </div>
+      </header>
+      <nav>
+         <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'show_people' %}">Patients</a></li>
+            <li><a href="{% url 'referrals' %}">Referrals</a></li>
+            <li><a href="/admin/">Admin</a></li>
+         </ul>
+      </nav>
+      {% block main %}    
+      {% endblock %}
+      <footer>
+         <p> &copy; NZ Health, 2021</p>
+      </footer>
+   </body>
+</html>

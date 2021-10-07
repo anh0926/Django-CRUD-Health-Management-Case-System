@@ -1,0 +1,381 @@
+/* RESET */
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, a, article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+ 
+* {
+    box-sizing: border-box;
+}
+
+/* END OF RESET */
+
+/* LAYOUT */
+
+/* Flexboxes */
+body{
+    max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;  
+    flex-wrap: wrap;
+}
+
+header h1 {
+    flex-grow: 2;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+header div {   
+    padding: 20px;
+}
+
+header img{
+    width: 6em;   
+}
+
+header p {
+    font-size: 0.7em;
+    box-sizing: border-box;
+}
+/* Margins and padding */
+
+nav, main, aside, footer {
+    padding: 1em;
+}
+
+footer{
+    margin-top: auto;
+}
+
+header > p {
+    margin-right: 1em;
+}
+
+aside div {
+    margin-bottom: 2em;
+    padding: 2em;
+}
+
+.table {
+    width: 100%;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    white-space: nowrap;
+}
+
+.row ::before{
+    display: block;
+}
+
+.post-form {
+    padding-left: 5em;
+    padding-right: 5em;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+/* TYPOGRAPHY */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+.login-form  {    
+    left: 50%;
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+    text-align: center;
+}
+header {
+    text-transform: uppercase;
+}
+
+.login {
+    text-transform: lowercase;
+}
+
+#table-title, main h2{
+    text-transform: capitalize;
+}
+
+header > p {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.5rem;
+    text-align: right;
+    margin-bottom: 0;
+}
+
+aside {
+    text-align: center;
+}
+
+aside p {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+}
+
+.nz-health{
+    font-style: italic;
+}
+
+footer {
+    text-align: center;
+    margin-top: auto;
+}
+
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+thead {
+    text-align: center; 
+  }
+
+.table h2 {
+      text-align: center;
+      color:rgb(15, 85, 59)1;
+      text-transform: capitalize;      
+  }
+
+td a { 
+    display: block;  
+ }
+  
+th a { 
+    display: block;  
+ }
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+    
+/* COLOUR SCHEME & BORDERS */
+
+body {
+    color: #444;
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+}
+
+aside > div {
+    background-color: #e0e0e0;
+    border: 1px solid #888;
+    border-radius: 0.5em;
+}
+
+nav,footer {
+    background-color: #444;
+    color: #fff;
+}
+nav{
+    color: #fff;
+}
+a:hover {
+    color: #f00;
+}
+
+nav a {
+    color: #fff;
+}
+
+#login {
+    color:red;    
+}
+
+td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  tr:nth-of-type(odd) { 
+    background: #eee; 
+  }
+  
+  tr:hover {background-color: #ddd;}
+
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #11f5a1;
+    color: white;
+  }
+
+  button {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+/* NAVIGATION */
+
+nav ul {
+    list-style-type: none;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+
+/* IMAGES */
+img {
+    width: 100%;
+}
+  
+
+/* RESPONSIVENESS */
+
+@media screen and (min-width: 42em) {
+    
+    /* Page grid */
+
+    body {
+        display: grid;        
+        grid-template-columns: 1fr 60rem 2fr; 
+        height: 100%;       
+    }
+
+    .login-form {    
+       margin-right: 20rem;
+    }
+    
+    header, nav, footer {
+        grid-column: 1 / 4;        
+    }
+
+    main, aside, .table , .login-form{
+        grid-column: 2;
+    }
+    
+    /* Flexboxes */
+    
+    nav ul {
+        display: flex;
+        justify-content: center;
+    }
+        
+    aside {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    aside > div {
+        width: 48%;
+    }
+    
+   
+    /* Margins and padding */
+    
+    nav li {
+        margin: 0 1em;
+    }
+
+    header h1 {
+        padding: 50px;
+    }
+
+}
+
+
+@media screen and (min-width: 62em) {
+    
+    /* Page grid */
+
+    body {
+        grid-template-columns: 1fr 40rem 1fr;
+    }
+
+    header, nav, footer {
+        grid-column: 1 / 4;
+    }
+
+    main, .table, .login-form {
+        grid-column: 2;
+    }
+
+    aside {
+        grid-column: 2;
+        grid-row: 3;
+    }
+    
+    .table h2{
+        display: block;
+    }
+
+
+    /* Other layout */
+    
+    aside {
+
+        display: block;
+    }
+    
+    aside > div {
+
+        width: 100%;
+    }
+
+    .post-form {
+        padding-left: 1em;
+    }
+
+    
+}
+
+
+
+
+
+
+
+
+

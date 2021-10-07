@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+{% block logo %} 
+<img src="../../static/images/logo.png"  alt="Fender logo">
+{% endblock %}
+
+{% block main %}
+<div class="login-form">
+<h2 >Log In</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Log In</button>
+</form>
+</div>
+
+{% endblock %}

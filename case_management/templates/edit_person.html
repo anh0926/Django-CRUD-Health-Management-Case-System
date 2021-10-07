@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block main %}
+<div class="table">
+   <form method="POST" class="post-form" action="/update_person/{{person.id}}">
+      {% csrf_token %}  
+      <div class="container">
+         <br>  
+         <div class="form-group row">
+            <label class="col-form-label"></label>  
+            <h2 >Update Details</h2>
+         </div>
+         <div >
+            <label class="col-form-label">First Name:</label>  
+            <div>  
+               <input type="text" name="firstName" id="id_firstName" required maxlength="100" value="{{ person.firstName }}" />  
+            </div>
+         </div>
+         <div >
+            <label class="col-form-label">Last Name:</label>  
+            <div class=" ">  
+               <input type="text" name="lastName" id="id_lastName" required maxlength="100" value="{{ person.lastName }}" />  
+            </div>
+         </div>
+         <div >
+            <label class="col-form-label">Birthday:</label>  
+            <div>  
+               <input type="date" name="bday" id="id_bday" required maxlength="254" value="{{ person.bday }}" />  
+            </div>
+         </div>
+         <div >
+            <label class="col-form-label"></label>  
+            <div>
+               <center><button type="submit">Update</button></center>
+            </div>
+         </div>
+      </div>
+   </form>
+</div>
+{% endblock %}

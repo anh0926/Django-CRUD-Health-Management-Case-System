@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block main %}
+
+<div class="table">
+    <h2>personal details</h2>
+    <table>          
+        <thead>  
+        <tr>  
+            <th>Id</th> 
+            <th>First Name</th> 
+            <th>Last Name</th>  
+            <th>Birthday</th>  
+            <th>referrer</th> 
+            <th>Referral Date</th>     
+            <th></th>     
+        </tr>  
+        </thead>  
+        <tbody>  
+        {% for referral in referrals %}
+        <tr>  
+            <td>{{ referral.person.id}}</td>
+            <td>{{ referral.person.firstName }}</td> 
+            <td>{{ referral.person.lastName }}</td>  
+            <td>{{ referral.person.bday }}</td>
+            <td>{{ referral.referrer}}</td>
+            <td>{{ referral.referralDate }}</td>          
+            <td>  
+                <a href="/show_referral/{{referral.id }}">show referal</a>  
+            </td>  
+        </tr>    
+        {% endfor %}      
+        </tbody>  
+    </table>  
+</div>
+
+<!-- <aside>
+    <div>
+        <h2>Cardiac Services</h2>
+        <img src="../static/images/Cardiac-Services.jpg" alt="Cardiac Services">
+        <p>A private, comprehensive and high quality service was set up in Christchurch in 2003 to meet the growing demand for high quality cardiac services.</p>
+    </div>
+    <div>
+        <h2>Surgical Services</h2>
+        <img src="../static/images/surgical-services.jpg" alt="surgical-services">
+        <p>Leading the way in providing care and technology, New Zealand Health offers a large variety of surgical services.</p>
+    </div>
+</aside> -->
+{% endblock %}
